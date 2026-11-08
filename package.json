@@ -1,0 +1,42 @@
+{
+  "name": "digimon-judge-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "PWA para consultar y administrar el Digimon Card Game fisico.",
+  "engines": {
+    "node": "^22.13.0 || >=24.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "predev": "npm run build -w @digimon/web",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @digimon/api\" \"npm run dev -w @digimon/web\"",
+    "build": "npm run build -w @digimon/web",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "npm run db:generate -w @digimon/db",
+    "db:migrate:local": "npm run db:migrate:local -w @digimon/db",
+    "db:check:local": "npm run db:check:local -w @digimon/db",
+    "cf:types": "npm run cf:types -w @digimon/api"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "22.20.5",
+    "concurrently": "10.0.7",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "globals": "17.14.0",
+    "prettier": "3.9.10",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.1",
+    "vitest": "4.1.12"
+  }
+}

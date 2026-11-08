@@ -1,0 +1,8 @@
+node_modules
+dist
+coverage
+.wrangler
+package-lock.json
+apps/api/worker-configuration.d.ts
+packages/db/migrations
+apps/web/public

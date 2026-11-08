@@ -1,0 +1,31 @@
+{
+  "name": "@digimon/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./schema": {
+      "types": "./src/schema/index.ts",
+      "default": "./src/schema/index.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local --config ../../apps/api/wrangler.jsonc",
+    "db:check:local": "wrangler d1 execute DB --local --config ../../apps/api/wrangler.jsonc --command \"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name\""
+  },
+  "dependencies": {
+    "@digimon/domain": "0.1.0",
+    "drizzle-orm": "0.45.4"
+  },
+  "devDependencies": {
+    "drizzle-kit": "0.31.11",
+    "wrangler": "4.158.0"
+  }
+}

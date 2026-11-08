@@ -1,0 +1,10 @@
+# Copia este archivo a .dev.vars solo para desarrollo local.
+# .dev.vars esta ignorado por Git. Nunca publiques valores reales.
+
+# Cloudflare Access. Sin ambos valores, las rutas administrativas responden 503.
+ACCESS_TEAM_DOMAIN=
+ACCESS_AUD=
+
+# La IA permanece deshabilitada en la Etapa 1.
+AI_ENABLED=false
+GEMINI_API_KEY=
