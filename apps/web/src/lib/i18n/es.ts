@@ -20,6 +20,68 @@ export const appText = {
   footer: 'Proyecto en construcción. Etapa 1: esqueleto y validaciones.',
 };
 
+export const cardsText = {
+  title: 'Buscador de cartas',
+  description:
+    'Busca cartas por nombre o identificador. La información se obtiene de la base de datos; no se generan cartas ni reglas.',
+  policy:
+    'Cada carta debe referenciar su fuente. Las imágenes alternativas solo se muestran cuando existen.',
+  searchLabel: 'Nombre o identificador',
+  searchPlaceholder: 'Ej. Agumon o BT1-001',
+  searchAction: 'Buscar',
+  clearAction: 'Limpiar',
+  loading: 'Buscando cartas...',
+  empty: 'No hay cartas que coincidan con la búsqueda.',
+  errorTitle: 'No se pudieron cargar las cartas',
+  retry: 'Reintentar',
+  resultsLabel: (total: number) => `${total} ${total === 1 ? 'carta' : 'cartas'}`,
+  pageLabel: (page: number, totalPages: number) => `Página ${page} de ${totalPages}`,
+  prevPage: 'Anterior',
+  nextPage: 'Siguiente',
+  back: 'Volver al buscador',
+  detailTitle: 'Detalle de carta',
+  officialText: 'Texto oficial',
+  mainArt: 'Imagen de la carta',
+  alternateArts: 'Artes alternos',
+  source: 'Fuente',
+  noImage: 'Sin imagen',
+  externalTitle: 'Resultados externos',
+  externalBadge: 'Fuente comunitaria',
+  externalAttribution:
+    'Fuente externa: DigimonCard.io. Datos comunitarios, no oficiales. No se guardan en la base de datos.',
+  externalDocsLabel: 'Documentación de DigimonCard.io',
+  externalLoading: 'Consultando la fuente externa...',
+  externalEmpty: 'La fuente externa no devolvió resultados.',
+  externalRateLimited:
+    'La fuente externa alcanzó su límite de solicitudes. Intenta de nuevo más tarde.',
+  externalTimeout: 'La fuente externa no respondió a tiempo.',
+  externalUnavailable:
+    'No se pudo consultar la fuente externa. La búsqueda local sigue disponible.',
+  externalRetry: 'Reintentar consulta externa',
+  fields: {
+    id: 'Identificador',
+    rarity: 'Rareza',
+    cardType: 'Tipo',
+    level: 'Nivel',
+    dp: 'DP',
+    set: 'Set',
+    color: 'Color',
+    color2: 'Color secundario',
+    playCost: 'Coste de juego',
+    evolutionCost: 'Coste de evolución',
+    form: 'Forma',
+    attribute: 'Atributo',
+    digiType: 'Tipo Digi',
+    series: 'Serie',
+    sets: 'Sets',
+  },
+  effects: {
+    main: 'Efecto principal',
+    source: 'Efecto de fuente',
+    alt: 'Efecto alterno',
+  },
+};
+
 export interface ModuleDefinition {
   path: string;
   title: string;
@@ -28,14 +90,9 @@ export interface ModuleDefinition {
 
 export const modules: ModuleDefinition[] = [
   {
-    path: '/search',
-    title: 'Buscador de cartas',
-    description: 'Búsqueda por nombre e identificador. Se implementará en la Etapa 2.',
-  },
-  {
     path: '/cards',
-    title: 'Base de datos de cartas',
-    description: 'Consulta de cartas y sus efectos oficiales. Se implementará en la Etapa 2.',
+    title: 'Cartas',
+    description: 'Búsqueda por nombre o identificador, texto oficial y fuente de cada carta.',
   },
   {
     path: '/rules',

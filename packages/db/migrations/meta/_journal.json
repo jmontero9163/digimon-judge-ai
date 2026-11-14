@@ -8,6 +8,41 @@
       "when": 1794069609666,
       "tag": "0000_loose_sentinels",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1794111765367,
+      "tag": "0001_stage2_knowledge_base",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1794111790082,
+      "tag": "0002_audit_guard",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1794111879297,
+      "tag": "0003_source_version_integrity",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1794112141876,
+      "tag": "0004_source_version_supersession_integrity",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "6",
+      "when": 1794145818597,
+      "tag": "0005_source_current_version",
+      "breakpoints": true
     }
   ]
 }

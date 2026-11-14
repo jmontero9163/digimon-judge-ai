@@ -1,6 +1,6 @@
 import { sql } from 'drizzle-orm';
 import { index, integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
-import { sources } from './sources';
+import { sources, sourceVersions } from './sources';
 import { users } from './users';
 
 export const auditLog = sqliteTable(
@@ -11,7 +11,11 @@ export const auditLog = sqliteTable(
     entityId: text('entity_id').notNull(),
     action: text('action', { enum: ['create', 'update', 'delete', 'import', 'publish'] }).notNull(),
     actorId: text('actor_id').references(() => users.id),
+    actorSubject: text('actor_subject'),
+    actorLabel: text('actor_label'),
+    requestId: text('request_id'),
     sourceId: text('source_id').references(() => sources.id),
+    sourceVersionId: text('source_version_id').references(() => sourceVersions.id),
     beforeJson: text('before_json'),
     afterJson: text('after_json'),
     createdAt: integer('created_at', { mode: 'timestamp_ms' })
@@ -21,6 +25,8 @@ export const auditLog = sqliteTable(
   (table) => [
     index('audit_log_entity_idx').on(table.entityType, table.entityId),
     index('audit_log_actor_idx').on(table.actorId),
+    index('audit_log_source_version_idx').on(table.sourceVersionId),
+    index('audit_log_request_idx').on(table.requestId),
     index('audit_log_created_idx').on(table.createdAt),
   ],
 );

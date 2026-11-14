@@ -1,0 +1,55 @@
+{
+  "format": "digimon-judge-cards/v1",
+  "source": {
+    "stableKey": "example-test-only",
+    "name": "Fuente ficticia de prueba",
+    "publisher": "Pruebas locales",
+    "url": "https://example.invalid/test-source",
+    "official": false,
+    "kind": "internal",
+    "version": "test-1",
+    "title": "Conjunto ficticio de prueba (no oficial)",
+    "retrievedAt": "2026-01-01T00:00:00.000Z"
+  },
+  "cards": [
+    {
+      "id": "TEST-001",
+      "name": "Carta ficticia de prueba 001",
+      "nameEn": "Fictional test card 001",
+      "set": {
+        "id": "TEST-SET-01",
+        "code": "TSET",
+        "name": "Set ficticio de prueba"
+      },
+      "cardType": "Digimon",
+      "color": "Red",
+      "level": 3,
+      "dp": 1000,
+      "playCost": 3,
+      "evolutionCost": 0,
+      "form": "Rookie",
+      "attribute": "Vaccine",
+      "rarity": "C",
+      "imageUrl": "https://example.invalid/cards/TEST-001.png",
+      "officialText": "[Texto ficticio de prueba. No es una carta oficial.]",
+      "status": "pending",
+      "sourceLocator": "example:TEST-001",
+      "images": [
+        {
+          "url": "https://example.invalid/cards/TEST-001-alt.png",
+          "type": "alternate",
+          "reference": "Arte alternativo ficticio"
+        }
+      ]
+    },
+    {
+      "id": "TEST-002",
+      "name": "Carta ficticia de prueba 002",
+      "cardType": "Digimon",
+      "level": 4,
+      "dp": 2000,
+      "officialText": "[Texto ficticio de prueba. No es una carta oficial.]",
+      "status": "pending"
+    }
+  ]
+}

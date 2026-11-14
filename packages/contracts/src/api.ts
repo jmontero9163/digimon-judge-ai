@@ -8,6 +8,9 @@ export const apiErrorCodeSchema = z.enum([
   'not_found',
   'not_implemented',
   'admin_auth_not_configured',
+  'external_rate_limited',
+  'external_timeout',
+  'external_unavailable',
   'internal_error',
 ]);
 

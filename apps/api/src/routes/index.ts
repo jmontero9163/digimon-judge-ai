@@ -3,6 +3,7 @@ import type { AccessVerifier } from '../middleware/auth';
 import type { AppContext } from '../env';
 import { createAdminRoutes } from './admin';
 import { healthRoutes } from './health';
+import { createCardRoutes } from './cards';
 import { createNotImplementedRoutes } from './not-implemented';
 
 export interface ApiRouteDependencies {
@@ -13,7 +14,7 @@ export function createApiRoutes(dependencies: ApiRouteDependencies = {}): Hono<A
   const routes = new Hono<AppContext>();
 
   routes.route('/health', healthRoutes);
-  routes.route('/cards', createNotImplementedRoutes('cartas'));
+  routes.route('/cards', createCardRoutes());
   routes.route('/rules', createNotImplementedRoutes('reglas y palabras clave'));
   routes.route('/judge', createNotImplementedRoutes('resolucion de interacciones'));
   routes.route('/decks', createNotImplementedRoutes('mazos'));

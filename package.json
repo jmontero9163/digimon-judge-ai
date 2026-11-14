@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "predev": "npm run build -w @digimon/web",
-    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @digimon/api\" \"npm run dev -w @digimon/web\"",
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @digimon/api\" \"node scripts/wait-for-api.mjs && npm run dev -w @digimon/web\"",
     "build": "npm run build -w @digimon/web",
     "lint": "eslint .",
     "typecheck": "npm run typecheck --workspaces --if-present",
@@ -24,6 +24,8 @@
     "db:generate": "npm run db:generate -w @digimon/db",
     "db:migrate:local": "npm run db:migrate:local -w @digimon/db",
     "db:check:local": "npm run db:check:local -w @digimon/db",
+    "import:cards": "node packages/db/scripts/import-cards.mjs",
+    "fetch:card-sample": "node packages/db/scripts/fetch-digimoncard-sample.mjs",
     "cf:types": "npm run cf:types -w @digimon/api"
   },
   "devDependencies": {

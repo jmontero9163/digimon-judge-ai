@@ -4,8 +4,10 @@ import {
   isOfficialSourceKind,
   isRuleStatus,
   isSourceKind,
+  isSourceVersionStatus,
   RULE_STATUSES,
   SOURCE_KINDS,
+  SOURCE_VERSION_STATUSES,
 } from '../src/index';
 
 describe('estados de reglas', () => {
@@ -40,5 +42,16 @@ describe('tipos de fuente', () => {
     expect(isOfficialSourceKind('official_faq')).toBe(true);
     expect(isOfficialSourceKind('community')).toBe(false);
     expect(isOfficialSourceKind('internal')).toBe(false);
+  });
+});
+
+describe('estados de versión de fuente', () => {
+  it('acepta unicamente los estados declarados', () => {
+    for (const status of SOURCE_VERSION_STATUSES) {
+      expect(isSourceVersionStatus(status)).toBe(true);
+    }
+
+    expect(isSourceVersionStatus('draft')).toBe(false);
+    expect(isSourceVersionStatus(undefined)).toBe(false);
   });
 });
